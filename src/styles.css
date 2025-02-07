@@ -243,3 +243,11 @@ main {
     border: none;
   }
 }
+
+.pictures {
+  display: flex;
+  & > img {
+    width: calc((100 / 3)vw);
+    height: 300px;
+  }
+}
