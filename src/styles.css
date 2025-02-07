@@ -1,0 +1,84 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+
+/* My styles */   
+
+body {
+  font-family: "Open Sans", serif;
+}
+
+h1,
+h2 {
+  font-family: "Playfair display";  
+}
+
+header {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  padding: 1% 3rem;      
+}
+
+nav.home-nav {
+  margin-left: auto;
+  & > ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+  & button {
+    padding: 0;
+    background: none;
+    border: none;
+    font-weight: 650;
+    letter-spacing: 0.04em;
+    &:hover {
+      cursor: pointer;
+      color: #72342C; 
+    }
+  }
+  & .home-btn {
+    border-bottom: 2px solid #A75D54;   
+  }
+}
