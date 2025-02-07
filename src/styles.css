@@ -49,20 +49,26 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: "Open Sans", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 h1,
 h2 {
   font-family: "Playfair display", sans-serif;
   font-weight: 400;
+  font-size: 2.69rem;
 }
 
 header {
   position: sticky;
+  top: 0; 
   display: flex;
   align-items: center;
   padding: 1% 3rem;
-  height: var(--vertical-margin);     
+  height: var(--vertical-margin);  
+  background-color: #FFF;      
 }
 
 nav.home-nav {
@@ -89,6 +95,13 @@ nav.home-nav {
   }
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--vertical-margin);
+}
+
 .hero-section {
   background-color: #9D4B40;
   color: #FFF;  
@@ -100,9 +113,6 @@ nav.home-nav {
   gap: 11rem;
   & .hero-text {
     padding-left: 11rem;
-  }
-  h1 {
-    font-size: 2.69rem;
   }
   & p {
     margin: 1.5rem 0;
@@ -129,3 +139,33 @@ nav.home-nav {
     height: 100%;
   }
 } 
+
+.catering-for-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  & h2 {
+    color: #9D4B40;
+  }
+}
+
+.catering-types {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;  
+}
+
+.catering,
+.meal-planning {
+  width: 566px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #6A6A6A; 
+  & h4 {
+    font-size: 1.38rem;
+    font-weight: 400;
+    color: #1B1B1B;
+  }
+}
