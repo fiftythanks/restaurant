@@ -251,3 +251,54 @@ main {
     height: 300px;
   }
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: calc(var(--vertical-margin) / 3);
+  padding: var(--vertical-margin) 11rem;
+  font-size: 0.9rem;  
+  color: #626262;
+  & .serve {
+    color: #1B1B1B;
+    font-weight: 700;
+    margin-bottom: calc(var(--vertical-margin) / 3);
+  }
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+  & > * {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  & .instagram {
+    background-color: #E1306C;
+    background-image: url("img/footer/instagram.svg");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+  & .twitter {
+    background-color: #1DA1F2;
+    background-image: url("img/footer/twitter.svg");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: 50%; 
+  }
+}
+
+.last-words-wrapper {
+  display: flex;
+  width: 100%;
+  & > :first-child {
+    margin-right: auto;
+  }
+}
