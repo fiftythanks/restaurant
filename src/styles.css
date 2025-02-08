@@ -71,7 +71,7 @@ header {
   background-color: #FFF;      
 }
 
-nav.home-nav {
+nav {
   margin-left: auto;
   & > ul {
     list-style-type: none;
@@ -90,8 +90,24 @@ nav.home-nav {
       color: #72342C; 
     }
   }
-  & .home-btn {
+}
+
+header {
+  &.home nav .home-btn {
+    color: #A75D54;
     border-bottom: 1px solid #A75D54;   
+  }
+  &.menu nav .menu-btn {
+    color: #A75D54;
+    border-bottom: 1px solid #A75D54; 
+  }
+  &.gallery nav .gallery-btn {
+    color: #A75D54;
+    border-bottom: 1px solid #A75D54; 
+  }
+  &.book nav .book-btn {
+    color: #A75D54;
+    border-bottom: 1px solid #A75D54; 
   }
 }
 
