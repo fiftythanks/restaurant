@@ -1,4 +1,5 @@
 import { header, main } from "./index.js";
+import starSrc from "./img/menu/star.svg";
 
 export function renderMenu() {
   header.removeAttribute("class");
@@ -361,8 +362,61 @@ export function renderMenu() {
   assorted.appendChild(assortedPrice);
 
   desserts.appendChild(assorted);
-
   menu.appendChild(desserts);
-
   main.appendChild(menu);
+
+  // Testimonials
+  const testimonialsWrapper = document.createElement("div");
+  testimonialsWrapper.classList.add("testimonials-wrapper");
+
+  const testimonialsTitle = document.createElement("h2");
+  testimonialsTitle.textContent = "Testimonials";
+  testimonialsWrapper.appendChild(testimonialsTitle);
+
+  const testimonials = document.createElement("div");
+  testimonials.classList.add("testimonials");
+  
+  // Create one, copy the rest
+  // Testimonial 1
+  const testimonial = document.createElement("div");
+  testimonial.classList.add("testimonial");
+
+  // Isn't a pic. Just an imitation by a round div
+  const testimonialPic = document.createElement("div");
+  testimonialPic.classList.add("testimonial-pic");
+  testimonial.appendChild(testimonialPic);
+
+  const testimonialStars = document.createElement("div");
+  testimonialStars.classList.add("testimonial-stars");
+
+  // Create one, copy the rest
+  const testimonialStar = document.createElement("img");
+  testimonialStar.classList.add("testimonial-star");
+  testimonialStar.src = starSrc;
+  testimonialStar.setAttribute("width", "27px");
+  testimonialStar.setAttribute("height", "27px");
+  testimonialStars.appendChild(testimonialStar);
+
+  for (let i = 1; i <= 4; i++) testimonialStars.appendChild(testimonialStar.cloneNode());
+  
+  testimonial.appendChild(testimonialStars);
+
+  const testimonialTitle = document.createElement("h4");
+  testimonialTitle.textContent = "Assorted Platter";
+  testimonial.appendChild(testimonialTitle);
+
+  const testimonialText = document.createElement("p");
+  testimonialText.textContent = "Great place to have a delicious, fancy dinner out!";
+  testimonial.appendChild(testimonialText);
+
+  const testimonialPerson = document.createElement("p");
+  testimonialPerson.classList.add("testimonial-person");
+  testimonialPerson.innerHTML = "<span style='font-weight: 700'>Andrew J</span> - 2019-05-21";
+  testimonial.appendChild(testimonialPerson);
+
+  for (let i = 1; i <= 3; i++) testimonials.appendChild(testimonial.cloneNode(true));
+
+  testimonialsWrapper.appendChild(testimonials);
+  main.appendChild(testimonialsWrapper);  
 }
+

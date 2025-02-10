@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 :root {
   --vertical-margin: 5rem;
   --hero-bgc: #9D4B40;
-  --greyish: #6A6A6A;
+    --greyish: #6A6A6A;
   --white: #fff;
   --blackish: #1B1B1B;
   --navbtn-emphasized: #A75D54;
@@ -103,6 +103,9 @@ p {
   }
   .testimonial & {
     color: var(--blackish);       
+  }
+  &.testimonial-person {
+    color: #595959;
   }
 }
 
@@ -379,5 +382,48 @@ footer {
   & > img {
     width: calc((100 / 3)vw);
     height: 300px;
+  }
+}
+
+/* Menu */
+.testimonials-wrapper {
+  background-image: url("./img/menu/menu-bg.webp");
+  background-position-y: 54%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--vertical-margin);
+  padding: var(--vertical-margin) 0 calc(var(--vertical-margin) * 2);
+}
+
+.testimonials {
+  display: flex;
+  gap: 2.5rem;  
+}
+
+.testimonial {
+  width: 18.125rem;
+  padding: 2rem; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.testimonial-pic {
+  background-color: #F3F3F3;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.testimonial-stars {
+  display: flex;
+  width: 100px;
+  & > * {
+    width: 20px;
+    flex: 0 0 auto;
   }
 }
