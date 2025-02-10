@@ -1,10 +1,13 @@
 import "./styles.css";
-import { header, main, footer, renderHome } from "./initial.js";
+import { renderHome } from "./initial.js";
 import { renderMenu } from "./menu.js";
+export const header = document.querySelector("header");
+export const main = document.querySelector("main");
+export const footer = document.querySelector("footer");
 
 renderHome();
 
-function clearPage(e  ) {
+function clearPage(e) {
   Array.from(main.childNodes).forEach((child) => child.remove());
 }
 

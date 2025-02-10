@@ -5,14 +5,15 @@ import heroSrc from "./img/home/hero.jpeg";
 import leftSrc from "./img/home/left.jpg";
 import mealPlanningSrc from "./img/home/meal-planning.jpeg";
 import rightSrc from "./img/home/right.jpeg";
-export const header = document.querySelector("header");
-export const main = document.querySelector("main");
-export const footer = document.querySelector("footer");
+import { header, main } from "./index.js";
 
 export function renderHome() {
+  header.removeAttribute("class");
+  header.classList.add("homepage");
+    
   // Hero
-  const heroSection = document.createElement("div");
-  heroSection.classList.add("hero-section");
+  const hero = document.createElement("div");
+  hero.classList.add("hero");
 
   const heroText = document.createElement("div");
   heroText.classList.add("hero-text");
@@ -30,7 +31,7 @@ export function renderHome() {
   heroTextButton.textContent = "BOOK NOW";
   heroText.appendChild(heroTextButton);
 
-  heroSection.appendChild(heroText);
+  hero.appendChild(heroText);
 
   const heroImage = document.createElement("div");
   heroImage.classList.add("hero-image");
@@ -42,8 +43,8 @@ export function renderHome() {
   heroImageImg.setAttribute("height", "614px");
   heroImage.appendChild(heroImageImg);
 
-  heroSection.appendChild(heroImage);
-  main.appendChild(heroSection);
+  hero.appendChild(heroImage);
+  main.appendChild(hero);
 
   // "Catering for all"
   const cateringForAll = document.createElement("div");
@@ -133,7 +134,7 @@ export function renderHome() {
 
   const featuredSectionTitleAppetizerText = document.createElement("p");
   featuredSectionTitleAppetizerText.textContent = "Delicate, hand-crafted platters";
-  featuredSectionTitleAppetizer.appendChild(featuredSectionTitleAppetizerText);
+  featuredSectionTitleAppetizer.appendChild(featuredSectionTitleAppetizerText); 
 
   featuredSectionAppetizer.appendChild(featuredSectionTitleAppetizer);
 
@@ -178,7 +179,7 @@ export function renderHome() {
   featuredSectionTitleEntreeText.textContent = "Delectable, mouthwatering main courses";
   featuredSectionTitleEntree.appendChild(featuredSectionTitleEntreeText);
 
-  featuredSectionEntree.appendChild(featuredSectionTitleEntreeText);
+  featuredSectionEntree.appendChild(featuredSectionTitleEntree);
 
   const featuredItemEntree = document.createElement("div");
   featuredItemEntree.classList.add("featured-item");
@@ -227,7 +228,7 @@ export function renderHome() {
 
   const featuredItemDessertDescriptionText = document.createElement("p");
   featuredItemDessertDescriptionText.textContent = "Brownies, cookies, yogurts, fruits";
-  featuredItemDessertDescription.appendChild(featuredItemAppetizerDescriptionText);
+  featuredItemDessertDescription.appendChild(featuredItemDessertDescriptionText);
 
   featuredItemDessert.appendChild(featuredItemDessertDescription);
 
@@ -267,8 +268,5 @@ export function renderHome() {
   pictures.appendChild(centerPic);
   pictures.appendChild(rightPic);
 
-  main.appendChild(pictures);
-
-  header.removeAttribute("class");
-  header.classList.add("home");     
+  main.appendChild(pictures);   
 }
