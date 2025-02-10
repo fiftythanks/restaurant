@@ -89,7 +89,7 @@ h4 {
 } 
 
 p {
-  :is(.hero, .price) & {
+  &:is(.hero, .price) {
     font-size: 1.25rem; /* Like h4 */ 
   }
   :is(.hero, .menu, .contact-us, .consultation) & {
@@ -173,7 +173,7 @@ main {
   body:has(.homepage) & {
     gap: var(--vertical-margin);
   }
-  body:has(:not(.homepage)) & {
+  body:has(header:not(.homepage)) & {
     padding-top: var(--vertical-margin);
   }
 }
@@ -197,19 +197,23 @@ main {
   & :is(.featured-item, .menu-item) {
     display: flex;
     align-items: first baseline;
-    gap: 5rem;  
+    gap: 5rem;
+    flex-shrink: 1;
   }
   & .price {
     margin-left: auto;
     text-align: right;
+    flex-shrink: 0;
   }
   & hr {
-    height: 1px;
+    height: 0.5px;
     border: none;
     .featured & { background-color: #E2E2E2; }
     .menu & { background-color: #C35F51; }
   }
 }
+
+.menu { padding-bottom: var(--vertical-margin); }
 
 /* Specific rules for different sections */
 

@@ -9,8 +9,7 @@ import { header, main } from "./index.js";
 
 export function renderHome() {
   header.removeAttribute("class");
-  header.classList.add("homepage");
-    
+  header.classList.add("homepage");  
   // Hero
   const hero = document.createElement("div");
   hero.classList.add("hero");
@@ -197,9 +196,9 @@ export function renderHome() {
 
   featuredItemEntree.appendChild(featuredItemEntreeDescription);
 
-  const featuredItemEntreePrice = document.createElement("div");
+  const featuredItemEntreePrice = document.createElement("p");
   featuredItemEntreePrice.classList.add("price");
-  featuredItemEntreePrice.innerHTML = "<p>$23 per person</p>";
+  featuredItemEntreePrice.innerHTML = "$23 per person";
   featuredItemEntree.appendChild(featuredItemEntreePrice);
 
   featuredSectionEntree.appendChild(featuredItemEntree);
@@ -232,9 +231,9 @@ export function renderHome() {
 
   featuredItemDessert.appendChild(featuredItemDessertDescription);
 
-  const featuredItemDessertPrice = document.createElement("div");
+  const featuredItemDessertPrice = document.createElement("p");
   featuredItemDessertPrice.classList.add("price");
-  featuredItemDessertPrice.innerHTML = "<p>$12 per person</p>";
+  featuredItemDessertPrice.textContent = "$12 per person";
   featuredItemDessert.appendChild(featuredItemDessertPrice);
 
   featuredSectionDessert.appendChild(featuredItemDessert);
