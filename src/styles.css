@@ -118,8 +118,7 @@ button {
   }
 }
 
-:not(nav) button {
-  font-size: 0.81rem;       
+:not(nav) button {  
   background-color: var(--white);
   color: var(--blackish);
 }
