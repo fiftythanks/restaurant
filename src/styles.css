@@ -130,6 +130,7 @@ button {
 }
 
 input,
+textarea,
 .consultation-cost {
   font-size: 0.81rem;
 }
@@ -147,8 +148,10 @@ input,
 }
 
 .consultation,
-input { 
+input,
+textarea { 
   background-color: #8B4238; 
+  color: var(--white);
 }
 
 footer { background-color: var(--white); }
@@ -222,6 +225,7 @@ main {
 
 /* Header */
 header {
+  z-index: 1;
   position: sticky;
   top: 0; 
   display: flex;
@@ -455,4 +459,115 @@ body:has(header.gallerypage) {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+/* Bookpage */
+.contact-us {
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    text-align: center;
+  }
+}
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: var(--vertical-margin);
+  & > * { width: 45rem; }
+
+  & > form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  & input,
+  textarea {
+    width: 100%;  
+    padding: 1rem;
+    border: none;
+    border-bottom: 5px solid var(--white);
+    resize: none;
+    &::placeholder { color: var(--white); }
+  }
+
+  & input:focus {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    &::placeholder { visibility: hidden; }
+  }
+
+  & input[type="email"] {
+    & + span {
+      position: absolute;
+      left: 0;
+      bottom: -1.5rem;
+      width: 100%;
+    }
+    &:user-invalid {
+      div:has(&) + textarea {
+        margin-top: 1rem;
+      }
+      & + span::before {
+        content: "Please enter a valid email address.";
+        color: var(--white);
+      }
+    }
+  }
+
+  & button {
+    align-self: center;
+    padding: 1rem 3rem;
+  }
+}       
+
+.field-wrapper { position: relative; }
+
+.field-name {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  color: var(--white);
+  font-size: 0.75rem; 
+  &:has(+ input[name="name"]:focus)::before {
+    content: "Name*";
+  }
+  &:has(+ input[name="phone"]:focus)::before {
+    content: "Phone";
+  }
+  &:has(+ input[name="email"]:focus)::before {
+    content: "Email*";
+  }
+}
+
+.consultation {
+  padding: var(--vertical-margin) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  & > * { width: 45rem; }
+  h2 { text-align: center; }
+}
+
+.consult-type {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  img {
+    width: 170px;
+    height: 127.5px;   
+    margin-right: auto; 
+  }
+  div { width: 100%; }
+  button { 
+    margin-left: auto;
+    padding: 1rem 1.5rem;
+  }
 }

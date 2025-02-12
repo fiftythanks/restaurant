@@ -2,6 +2,7 @@ import "./styles.css";
 import { renderHome } from "./initial.js";
 import { renderMenu } from "./menu.js";
 import { renderGallery } from "./gallery.js";
+import { renderBook } from "./bookpage.js";
 export const header = document.querySelector("header");
 export const main = document.querySelector("main");
 export const footer = document.querySelector("footer");
@@ -27,6 +28,11 @@ function moveToGallery(e) {
   renderGallery();
 }
 
+function moveToBook(e) {
+  clearPage();
+  renderBook();
+}
+
 
 const homeBtn = header.querySelector(".home-btn");
 homeBtn.addEventListener("click", moveToHome);
@@ -36,3 +42,6 @@ menuBtn.addEventListener("click", moveToMenu);
 
 const galleryBtn = document.querySelector(".gallery-btn");
 galleryBtn.addEventListener("click", moveToGallery);
+
+const bookBtn = document.querySelector(".book-btn");
+bookBtn.addEventListener("click", moveToBook);
