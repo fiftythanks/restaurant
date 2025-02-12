@@ -69,7 +69,7 @@ h2 {
   color: var(--white);  
 }
 
-.gallery h1,
+body:has(header.gallerypage) h1,
 :is(.catering-for-all, .featured) h2,
 .featured h3 {
   color: var(--hero-bgc);
@@ -273,6 +273,9 @@ footer {
   align-items: center;
   gap: calc(var(--vertical-margin) / 3);
   padding: var(--vertical-margin) 11rem;
+  body:has(header.gallerypage) & {
+    background-color: #F6F6F6;
+  }
   & .serve {
     color: var(--blackish);
     font-weight: 700;
@@ -426,4 +429,30 @@ footer {
     width: 20px;
     flex: 0 0 auto;
   }
+}
+
+/* Gallery */
+body:has(header.gallerypage) {
+  & h1 { text-align: center; }
+  & header { border-bottom: 0.5px solid #E2E2E2; }
+}
+
+
+.gallery-wrapper {
+  align-self: center;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  margin: 3rem 0;    
+  & img { cursor: pointer; }
+}
+
+.gallery-wrapper > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

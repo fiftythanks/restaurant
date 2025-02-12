@@ -233,7 +233,7 @@ export function renderHome() {
 
   const featuredItemDessertPrice = document.createElement("p");
   featuredItemDessertPrice.classList.add("price");
-  featuredItemDessertPrice.textContent = "$12 per person";
+  featuredItemDessertPrice.textContent = "$12 per person  ";
   featuredItemDessert.appendChild(featuredItemDessertPrice);
 
   featuredSectionDessert.appendChild(featuredItemDessert);
